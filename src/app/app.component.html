@@ -3,8 +3,8 @@
   <button mat-button (click)="sidenav.open()"> <mat-icon> menu </mat-icon> </button>
   <span> Asimov </span>
   <span class = "example-spacer"></span>
-  <button mat-button> <mat-icon> home </mat-icon> </button>
-  <button mat-button> <mat-icon> account_circle </mat-icon> </button>
+  <button routerLink = "/home" mat-button> <mat-icon> home </mat-icon> </button>
+  <button routerLink = "/teacher-dashboard" mat-button> <mat-icon> account_circle </mat-icon> </button>
   <button mat-button [matMenuTriggerFor] = "appMenu"> <mat-icon> settings </mat-icon> </button>
 </mat-toolbar>
 <mat-menu #appMenu = "matMenu">
@@ -16,3 +16,4 @@
 
   </mat-sidenav>
 </mat-sidenav-container>
+<router-outlet></router-outlet>

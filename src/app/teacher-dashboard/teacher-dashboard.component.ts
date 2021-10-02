@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ApiService } from '../shared/api.service';
+import { TeacherDashboardService } from './services/teacher-dashboard.service';
 import { TeacherModel } from './models/teacher-dashboard.model';
 
 @Component({
@@ -15,7 +15,7 @@ export class TeacherDashboardComponent implements OnInit {
   teacherData !: any;
   showAddButton !: boolean;
   showUpdateButton !: boolean;
-  constructor(private formbuilder: FormBuilder, private api : ApiService) { }
+  constructor(private formbuilder: FormBuilder, private api : TeacherDashboardService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
