@@ -1,0 +1,80 @@
+<nav class = "nav navbar" style = "background-color: rgb(35, 35, 43)">
+  <div class = "container fluid">
+    <h1 id = "maintitle" style = "color: white"> Teachers </h1>
+    <div class>
+      <div class = "d-flex">
+        <button (click) = "clickAddTeacher()" class="btn btn-success" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"> Add Teacher</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<table class = "table">
+  <thead>
+    <tr>
+      <th scope = "col"> Teacher ID </th>
+      <th scope = "col"> First Name </th>
+      <th scope = "col"> Last Name</th>
+      <th scope = "col"> email </th>
+      <th scope = "col"> Mobile Number</th>
+      <th scope = "col"> Course </th>
+      <th scope = "col"> Action </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let row of teacherData">
+      <td> {{ row.id }} </td>
+      <td> {{ row.firstname }} </td>
+      <td> {{ row.lastname }} </td>
+      <td> {{ row.email }} </td>
+      <td> {{ row.mobile }} </td>
+      <td> {{ row.course }} </td>
+      <td>
+
+        <button (click)= "onEdit(row)" class = "btn" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"> <mat-icon> edit </mat-icon> </button>
+        <button (click) = "deleteTeacher(row)" class = "btn mx-3"> <mat-icon> delete </mat-icon> </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Teacher Details </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"> First Name </label>
+            <input type="text" formControlName="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"> Last Name </label>
+            <input type="text" formControlName="lastname" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"> e-mail </label>
+            <input type = "email" formControlName = "email" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class = "form-label"> Mobile Number </label>
+            <input type="tel" formControlName = "mobile" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class = "form-label"> Course </label>
+            <input type="text" formControlName = "course" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+        <button type="button" *ngIf = "showAddButton" (click) = "postTeacherDetails()" class="btn btn-primary"> Save </button>
+        <button type="button" *ngIf = "showUpdateButton" (click) = "updateTeacherDetails()" class="btn btn-primary"> Update </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "firstname": "Angel",
+      "lastname": "Jackson",
+      "email": "a.jackson@gmail.com",
+      "mobile": 989299281,
+      "course": "Matematica"
+    },
+    {
+      "id": 2,
+      "firstname": "Meredith",
+      "lastname": "Grey",
+      "email": "m.grey@gmail.com",
+      "mobile": 989219251,
+      "course": "Biologia"
+    },
+    {
+      "id": 3,
+      "firstname": "Dio",
+      "lastname": "Brando",
+      "email": "d.brando@gmail.com",
+      "mobile": 913923281,
+      "course": "Lectura Integral"
+    },
+    {
+      "id": 4,
+      "firstname": "leonardo.grau@outlook.com.pe",
+      "lastname": "leonardo.grau@outlook.com.pe",
+      "email": "leonardo.grau@outlook.com.pe",
+      "mobile": "958316581",
+      "course": "asdasd"
+    }
+  ]
+}
