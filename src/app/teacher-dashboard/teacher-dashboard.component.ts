@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
-import { TeacherModel } from './models/teacher-dash-board.model';
+import { TeacherModel } from './models/teacher-dashboard.model';
 
 @Component({
   selector: 'app-teacher-dashboard',
