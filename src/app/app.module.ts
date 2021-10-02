@@ -13,6 +13,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav'
+import {RouterModule} from "@angular/router";
+import {MatTableModule} from "@angular/material/table";
+import {MatDividerModule} from "@angular/material/divider";
+import {CircleProgressComponent, NgCircleProgressModule} from "ng-circle-progress";
 
 
 @NgModule({
@@ -32,7 +36,18 @@ import { MatSidenavModule } from '@angular/material/sidenav'
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    RouterModule,
+    MatTableModule,
+    MatDividerModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
